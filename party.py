@@ -29,7 +29,38 @@ def is_mel(name, email):
 
 
 def most_and_least_common_type(treats):
-    """Given list of treats, return {most, least} common types."""
+    """Given list of treats, return {most, least} common types.
+
+    >>> treats = [
+    ...     {'type': 'dessert'},
+    ...     {'type': 'dessert'},
+    ...     {'type': 'appetizer'},
+    ...     {'type': 'dessert'},
+    ...     {'type': 'appetizer'},
+    ...     {'type': 'drink'},
+    ... ]
+
+    >>> most_and_least_common_type(treats)
+    ('dessert', 'drink')
+
+    If empty list is given:
+
+    >>> most_and_least_common_type([])
+    (None, None)
+
+    If there is only one type:
+
+    >>> most_and_least_common_type([{'type': 'dessert'}])
+    ('dessert', 'dessert')
+
+    If there's a tie for most and/or least types:
+
+    >>> treats = [{'type': 'dessert'}, {'type': 'drinks'},]
+    >>> most_and_least_common_type(treats)
+    ('dessert', 'dessert')
+
+
+    """
 
     types = {}
 
